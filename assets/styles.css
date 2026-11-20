@@ -456,8 +456,9 @@ h1 {
 .time-glass {
   position: fixed;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
   z-index: 50;
   display: flex;
   align-items: center;
@@ -465,13 +466,14 @@ h1 {
   padding: 16px 25px;
   border-radius: 26px;
   border: 1px solid #ffffffb8;
-  background: linear-gradient(135deg,#ffffffa3,#ffffff45 55%,#ffffff70);
-  backdrop-filter: blur(24px) saturate(170%);
-  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  /* Keep a readable light surface even over dark or saturated photographs. */
+  background: linear-gradient(135deg,rgba(255,255,255,.94),rgba(246,245,240,.88) 55%,rgba(255,255,255,.92));
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow: 0 10px 35px #24241f18,inset 0 1px 1px #fff,inset 0 -1px 1px #ffffff70;
   width: max-content;
   max-width: 94vw;
-  color: #292923;
+  color: #20211d;
 }
 
 .glass-item {
@@ -483,11 +485,13 @@ h1 {
 
 .glass-item>span {
   font-size: 13px;
-  color: #494943;
+  color: #3c3d36;
+  font-weight: 500;
 }
 
 .glass-item strong {
   font-size: 20px;
+  color: #20211d;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   letter-spacing: -.025em;
@@ -495,7 +499,8 @@ h1 {
 
 .glass-item small {
   font-size: 12px;
-  color: #626259;
+  color: #4a4b43;
+  font-weight: 500;
 }
 
 .glass-divider {
@@ -524,7 +529,7 @@ nav {
   }
 
   .glass-item strong {
-    font-size: clamp(13px,3.5vw,18px);
+    font-size: clamp(12px,3.5vw,18px);
   }
 
   .glass-item>span,.glass-item small {
